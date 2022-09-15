@@ -17,7 +17,7 @@ model User {
 
 model Category {
   id   Int    @id(map: "categories_pk") @default(autoincrement())
-  name String
+  name String @unique
 
   tests Test[]
 
@@ -45,6 +45,8 @@ model TeacherDiscipline {
   tests       Test[]
   teachers    Teacher    @relation(fields: [teacherId], references: [id])
   disciplines Discipline @relation(fields: [disciplineId], references: [id])
+
+  @@unique([teacherId, disciplineId], name: "teacherId_disciplineId")
 
   @@map("teachersDisciplines")
 }
