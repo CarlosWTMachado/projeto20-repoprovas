@@ -10,8 +10,3 @@ testRouter.post('/create/test', validateToken, schemaValidate(testSchema), testC
 testRouter.get('/tests', validateToken, testController.GetAll);
 
 export default testRouter;
-
-// genericRouter.post('/create', GController);
-// genericRouter.get('/read', GController);
-// genericRouter.put('/update', GController);
-// genericRouter.delete('/delete', GController);
