@@ -7,7 +7,7 @@
 		"pretest": "dotenv -e .env.test prisma migrate dev",
 		"test": "dotenv -e .env.test jest --no-cache",
 		"dev": "nodemon src/server.ts",
-		"build": "tsc",
+		"build": "tsc && prisma generate",
 		"start": "node dist/server.js"
 	},
 	"prisma": {
